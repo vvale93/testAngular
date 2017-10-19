@@ -9,6 +9,7 @@ import { PostComponent } from './post/post.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { LogUpFormComponent } from './log-up-form/log-up-form.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { BlogBodyComponent } from './blog-body/blog-body.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserListComponent } from './user-list/user-list.component';
     PostComponent,
     SideBarComponent,
     LogUpFormComponent,
-    UserListComponent
+    UserListComponent,
+    BlogBodyComponent
   ],
   imports: [
     BrowserModule,
