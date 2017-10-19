@@ -10,6 +10,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { LogUpFormComponent } from './log-up-form/log-up-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { BlogBodyComponent } from './blog-body/blog-body.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { BlogFooterComponent } from './blog-footer/blog-footer.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { BlogBodyComponent } from './blog-body/blog-body.component';
     SideBarComponent,
     LogUpFormComponent,
     UserListComponent,
-    BlogBodyComponent
+    BlogBodyComponent,
+    AboutUsComponent,
+    BlogFooterComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
