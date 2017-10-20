@@ -13,7 +13,7 @@ import { BlogBodyComponent } from './blog-body/blog-body.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BlogFooterComponent } from './blog-footer/blog-footer.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-
+import { FormsModule } from '@angular/forms'; 
 @NgModule({
   declarations: [
     AppComponent,
