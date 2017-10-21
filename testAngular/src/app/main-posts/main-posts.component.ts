@@ -18,3 +18,4 @@ export class MainPostsComponent implements OnInit {
   }
 
 }
+//quiero mostrar un par de postttttttttttttts
