@@ -8,6 +8,7 @@ export class GetPostsService {
   constructor(private http : Http) { }
 
   getAll() : Observable<any> {
+    
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
 }
 

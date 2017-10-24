@@ -8,6 +8,7 @@ import { GetPostsService } from '../get-posts.service';
 })
 export class AllPostsComponent implements OnInit {
   posts : Array<any>;
+  lastid : number;
   
 
   constructor(private GetPostsService : GetPostsService) { }
@@ -15,6 +16,7 @@ export class AllPostsComponent implements OnInit {
   ngOnInit() {
     this.GetPostsService.getAll().subscribe(posts => {
             this.posts = posts.json();
+            this.lastid=this.posts.length;
            });
   }
 
