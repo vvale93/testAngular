@@ -13,4 +13,7 @@ export class UserListService {
        return this.http.get('https://jsonplaceholder.typicode.com/users');
    }
 
+   get(id: number) {
+        return this.http.get('https://jsonplaceholder.typicode.com/users/' + id);
+     }
 }

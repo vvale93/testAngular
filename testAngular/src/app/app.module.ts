@@ -19,6 +19,10 @@ import { UserListService } from './user-list.service';
 import { HttpModule } from '@angular/http';
 import { AllPostsComponent } from './all-posts/all-posts.component';
 import { GetPostsService } from './get-posts.service';
+import { PostComponentComponent } from './post-component/post-component.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LastpostsComponent } from './lastposts/lastposts.component';
+import { LastpostsService } from './lastposts.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { GetPostsService } from './get-posts.service';
     AboutUsComponent,
     BlogFooterComponent,
     ContactUsComponent,
-    AllPostsComponent
+    AllPostsComponent,
+    PostComponentComponent,
+    UserProfileComponent,
+    LastpostsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,8 @@ import { GetPostsService } from './get-posts.service';
   ],
   providers: [
     UserListService,
-    GetPostsService
+    GetPostsService, 
+    LastpostsService
   ],
   bootstrap: [AppComponent]
 })

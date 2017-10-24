@@ -1,0 +1,16 @@
+<div class="container-fluid postContainer">
+    <div class="row">
+      <app-side-bar class="col-3 navbar-fixed-left" ></app-side-bar>
+      <section class="col-8">
+<div *ngIf="post">
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.body }} </p>
+
+</div>
+<div  *ngIf="!post">
+    Post not found
+</div> 
+      </section>
+    </div></div>
+
+  
