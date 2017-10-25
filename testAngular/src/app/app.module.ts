@@ -24,6 +24,7 @@ import {NgPipesModule} from 'ngx-pipes';
 import { MainpostPostComponent } from './mainpost-post/mainpost-post.component';
 import { CommentsService } from './comments.service';
 import { CommentComponent } from './comment/comment.component'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CommentComponent } from './comment/comment.component'
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    NgPipesModule
+    NgPipesModule,
+    NgxPaginationModule
   ],
   providers: [
     UserListService,

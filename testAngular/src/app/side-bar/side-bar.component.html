@@ -1,10 +1,11 @@
-<nav class="bg-light sidebar">
-  <h4>Ultimos comentarios</h4>
-  <ul>
-    <li *ngFor="let comment of comments | reverse | slice:0:10">
-      <p>{{ comment.body }}</p>
-      <a [routerLink]="['/post',comment.postId ]">Ir al post</a> 
-      <br/>
+<nav class=" sidebar">
+  <h4 class="titulo">Ultimos comentarios</h4>
+  <ul class="lista">
+    <li class="comentario" *ngFor="let comment of comments | reverse | slice:0:10">
+      <p>{{ comment.body }}
+        <a class="postLink"[routerLink]="['/post',comment.postId ]">Ir al post</a>
+      </p>
+      <hr/>
     </li>
        
   </ul>

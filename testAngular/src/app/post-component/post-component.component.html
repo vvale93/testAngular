@@ -2,14 +2,22 @@
     <div class="row">
         <app-side-bar class="col-3 navbar-fixed-left" ></app-side-bar>
         <section class="col-8">
-            <div *ngIf="post">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.body }} </p>
+            <div class="userPost" *ngIf="post">
+                <h1 class="postTitle">{{ post.title | ucfirst }}</h1>
+                <p class="postBody">{{ post.body }} </p>
                 <a [routerLink]="['/user', post.userId]">Autor</a>
             </div>
             <div *ngIf="!post">
                 Post not found
             </div> 
+            <div class="commentBox">
+                <h2 class="commentBoxTitle">Comentarios:</h2>
+            <div *ngFor="let comment of comments">
+                <p>"{{ comment.body | ucfirst }}"</p>
+                <p>Enviado por: <span class="email">{{ comment.email }}</span></p>
+                <hr/>
+            </div>
+        </div>
         </section>
     </div>
 </div>

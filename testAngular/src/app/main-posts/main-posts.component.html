@@ -1,8 +1,9 @@
 <div class="container-fluid main-posts-container">
-  <h2>Posts</h2>
+  <h1 class="titulo">Posts</h1>
   <section>
-    <article *ngFor="let post of posts | reverse | slice:0:10">
+    <article *ngFor="let post of posts | reverse | paginate: { itemsPerPage: 10, currentPage: p }">
       <app-mainpost-post [post]="post"></app-mainpost-post>
     </article>
   </section>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

@@ -8,8 +8,13 @@ import { GetPostsService } from '../get-posts.service';
 })
 export class MainPostsComponent implements OnInit {
 
+  collection = [];    
   posts : Array<any>;
-  constructor(private GetPostsService : GetPostsService) { }
+  constructor(private GetPostsService : GetPostsService) {
+    for (let i = 1; i <= 100; i++) {
+      this.collection.push(`item ${i}`);
+    }
+   }
 
   ngOnInit() {
     this.GetPostsService.getAll().subscribe(posts => {

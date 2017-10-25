@@ -3,8 +3,17 @@
     margin-top: 60px;
 }
 
-article 
+.article 
 {
-    border-left: 6px solid orange;
-    background-color: rgba(255, 162, 0, 0.38);
+    border-left: 6px solid #fbe2a6;
+    background-color: #f9f0be
+}
+.titulo
+{
+    font-size: 30px;
+}
+.lista
+{
+    list-style: none;
+    padding: 7px;
 }

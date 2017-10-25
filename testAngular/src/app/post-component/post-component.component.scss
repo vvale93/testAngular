@@ -2,3 +2,44 @@
 {
     margin-top: 60px;
 }
+.postTitle
+{
+    font-size: 30px;
+}
+.userPost
+{
+    background-color: #e2f4ac;
+}
+.postBody
+{
+    font-size: 18px;
+}
+
+a:link
+{
+    text-decoration: none;
+    color: #fd9775;
+}
+
+a:visited
+{
+    color: #fda6c9;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+.commentBox
+{
+    background-color: #f9f0be;
+}
+
+.commentBoxTitle
+{
+    font-size: 20px;
+}
+.email
+{
+    color:#fd9775;
+}

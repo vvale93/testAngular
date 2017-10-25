@@ -10,10 +10,9 @@ export class CommentsService {
   getAll() {
         return this.http.get('https://jsonplaceholder.typicode.com/comments');
       }
-  getPostId(postId:number)
+  getPostComments(id:number)
   {
-    return this.http.get('https://jsonplaceholder.typicode.com/comments')
-    .map(data => data.json());
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id+'/comments');
   }
 
 }
