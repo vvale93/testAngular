@@ -11,9 +11,9 @@ import { CommentsService } from '../comments.service';
 export class PostComponentComponent implements OnInit {
 
   post : any;
-  comments : Array<any>;
+  /*comments : Array<any>;*/
 
-  constructor(private route : ActivatedRoute, private service : GetPostsService & CommentsService) { }
+constructor(private route : ActivatedRoute, private service : GetPostsService /*& CommentsService*/) { }
 
   private getPost(id: number) {
       this.service.get(id).subscribe((post) => {
@@ -21,11 +21,11 @@ export class PostComponentComponent implements OnInit {
       });
   }
 
-  private getComments(id: number) {
+  /*private getComments(id: number) {
     this.service.get(id).subscribe((comments) => {
         this.comments = comments.json();
-    });
-}
+    });*/
+
 
   ngOnInit() {
       this.route.params.subscribe((params) => {
@@ -33,10 +33,10 @@ export class PostComponentComponent implements OnInit {
           this.getPost(id);
       })
 
-      this.route.params.subscribe((params) => {
+      /*this.route.params.subscribe((params) => {
         let id = params['id'];
         this.getComments(id);
-    })
+    })*/
   }
 
 }
