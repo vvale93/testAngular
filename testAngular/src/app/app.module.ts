@@ -4,11 +4,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { PageHeaderComponent } from './page-header/page-header.component';
 import { MainPostsComponent } from './main-posts/main-posts.component';
 import { PostComponent } from './post/post.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { LogUpFormComponent } from './log-up-form/log-up-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { BlogBodyComponent } from './blog-body/blog-body.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -21,18 +19,19 @@ import { AllPostsComponent } from './all-posts/all-posts.component';
 import { GetPostsService } from './get-posts.service';
 import { PostComponentComponent } from './post-component/post-component.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { LastpostsComponent } from './lastposts/lastposts.component';
 import { LastpostsService } from './lastposts.service';
+import {NgPipesModule} from 'ngx-pipes';
+import { MainpostPostComponent } from './mainpost-post/mainpost-post.component';
+import { CommentsService } from './comments.service';
+import { CommentComponent } from './comment/comment.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    PageHeaderComponent,
     MainPostsComponent,
     PostComponent,
     SideBarComponent,
-    LogUpFormComponent,
     UserListComponent,
     BlogBodyComponent,
     AboutUsComponent,
@@ -41,19 +40,22 @@ import { LastpostsService } from './lastposts.service';
     AllPostsComponent,
     PostComponentComponent,
     UserProfileComponent,
-    LastpostsComponent
+    MainpostPostComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NgPipesModule
   ],
   providers: [
     UserListService,
     GetPostsService, 
-    LastpostsService
+    LastpostsService,
+    CommentsService
   ],
   bootstrap: [AppComponent]
 })

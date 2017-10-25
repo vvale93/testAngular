@@ -1,17 +1,8 @@
 <div class="container-fluid main-posts-container">
   <h2>Posts</h2>
   <section>
-    <article>
-        <h3>Lore Ipsum 1</h3>      
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet orci metus, quis vulputate ex vulputate tincidunt. Nam at aliquam nulla, ornare hendrerit nisi. Ut at nunc urna. Suspendisse ultricies non leo in tincidunt. Donec sollicitudin ornare arcu, ut dapibus justo consequat quis. Cras tristique magna eu tempor luctus. Suspendisse in ante nec diam vehicula venenatis. Phasellus mollis mollis sem, a ornare neque. Phasellus tincidunt ligula massa, a condimentum diam lacinia quis. Quisque viverra ac libero non semper. Fusce id ante vestibulum est feugiat pulvinar nec laoreet tortor. Curabitur vel tempus dui.</p>
-    </article>
-    <article>
-        <h3>Lore Ipsum 2</h3>
-        <p>Maecenas iaculis in mi sagittis molestie. Duis et sapien vel lacus pretium consequat. Morbi quam lacus, ultricies eu sagittis vitae, dictum a mi. Curabitur elementum velit non ante euismod, eget eleifend sem suscipit. Curabitur in molestie purus. Donec elementum lorem mi, non convallis dui suscipit eu. Morbi euismod porttitor enim. Nam fermentum consequat consequat. Donec vel semper justo. Sed nisl ex, cursus vel metus at, rutrum porta turpis.</p>
-    </article>
-    <article>
-        <h3>Lore Ipsum 3</h3>
-      <p>Etiam molestie odio nisi, id ornare augue facilisis blandit. Maecenas tincidunt, nisi quis accumsan euismod, ex urna cursus mi, ut maximus metus nibh sed enim. Sed eget diam vel tortor convallis efficitur. Fusce ac dui vehicula, tincidunt magna consectetur, vehicula ligula. In hendrerit tristique mi dictum rhoncus. Donec feugiat massa finibus elit ullamcorper, eget vestibulum sem interdum. Donec sapien ante, fringilla nec tristique quis, accumsan non tellus. Nullam volutpat fermentum elementum. Nam ut consectetur dolor. Vestibulum vitae pretium dolor, et pellentesque dui. Integer iaculis scelerisque arcu sit amet porttitor.</p>
+    <article *ngFor="let post of posts | reverse | slice:0:10">
+      <app-mainpost-post [post]="post"></app-mainpost-post>
     </article>
   </section>
 </div>

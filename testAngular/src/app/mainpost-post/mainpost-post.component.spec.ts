@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LogUpFormComponent } from './log-up-form.component';
+import { MainpostPostComponent } from './mainpost-post.component';
 
-describe('LogUpFormComponent', () => {
-  let component: LogUpFormComponent;
-  let fixture: ComponentFixture<LogUpFormComponent>;
+describe('MainpostPostComponent', () => {
+  let component: MainpostPostComponent;
+  let fixture: ComponentFixture<MainpostPostComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogUpFormComponent ]
+      declarations: [ MainpostPostComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LogUpFormComponent);
+    fixture = TestBed.createComponent(MainpostPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -14,8 +14,7 @@ export class MainPostsComponent implements OnInit {
   ngOnInit() {
     this.GetPostsService.getAll().subscribe(posts => {
       this.posts = posts.json();
-     });
+    });
   }
 
 }
-//quiero mostrar un par de postttttttttttttts.

@@ -8,17 +8,13 @@ import { GetPostsService } from '../get-posts.service';
 })
 export class AllPostsComponent implements OnInit {
   posts : Array<any>;
-  lastid : number;
   
 
   constructor(private GetPostsService : GetPostsService) { }
 
   ngOnInit() {
     this.GetPostsService.getAll().subscribe(posts => {
-            this.posts = posts.json();
-            this.lastid=this.posts.length;
-           });
+      this.posts = posts.json();
+    });
   }
-
 }
-//user.name post.lalala, etc
