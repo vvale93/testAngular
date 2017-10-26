@@ -6,8 +6,8 @@
       <h1 class="titulo">Lista de usuarios</h1>  
       <ul class="lista">
         <li *ngFor="let user of users">
-            <a [routerLink]="['/user', user.id]">{{ user.name }}</a>
-            <hr/>
+          <a [routerLink]="['/user', user.id]">{{ user.name }}</a>
+          <hr/>
         </li>
       </ul>
     </article> 

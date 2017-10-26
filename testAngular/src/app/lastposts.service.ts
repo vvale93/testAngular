@@ -8,10 +8,10 @@ export class LastpostsService {
   constructor(private http : Http) { }
   getAll() : Observable<any> {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
-}
+  }
 
-get(id: number) {
-      return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id);
-   }
+  get(id: number) {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id);
+  }
 
 }
