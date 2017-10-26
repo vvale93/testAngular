@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'posts', component: AllPostsComponent },
   { path: 'post/:id', component: PostComponentComponent },
   { path: 'user/:id', component: UserProfileComponent },
-  { path: 'registro', component: RegisterComponent}
-  /*{ path: '**', component: ErrorComponent }*/
+  { path: 'registro', component: RegisterComponent},
+  { path: '**', component: BlogBodyComponent }
 ];
 
 @NgModule({

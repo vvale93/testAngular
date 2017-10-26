@@ -3,14 +3,14 @@
     <app-side-bar class="col-3 navbar-fixed-left" ></app-side-bar>
     <section class="col-8">
       <article class="article"> 
-      <h1 class="titulo">Lista de usuarios</h1>  
-      <ul class="lista">
-        <li *ngFor="let user of users">
-          <a [routerLink]="['/user', user.id]">{{ user.name }}</a>
-          <hr/>
-        </li>
-      </ul>
-    </article> 
+        <h1 class="titulo">Lista de usuarios</h1>  
+        <ul class="lista">
+          <li *ngFor="let user of users">
+            <a [routerLink]="['/user', user.id]">{{ user.name }}</a>
+            <hr/>
+          </li>
+        </ul>
+      </article> 
     </section>
   </div>  
 </div>

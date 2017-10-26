@@ -16,4 +16,3 @@ export class PostComponent implements OnInit {
   }
 
 }
-/*asi tambien*/
