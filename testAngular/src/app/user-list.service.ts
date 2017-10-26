@@ -9,10 +9,16 @@ export class UserListService {
     }
  
   getAll() : Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/users');
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
+      .map(function(data){
+        return data.json();
+      });
   }
 
   get(id: number) {
-    return this.http.get('https://jsonplaceholder.typicode.com/users/' + id);
+    return this.http.get('https://jsonplaceholder.typicode.com/users/' + id)
+      .map(function(data){
+        return data.json();
+      });
   }
 }

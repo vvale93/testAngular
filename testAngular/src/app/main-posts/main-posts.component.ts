@@ -12,13 +12,13 @@ export class MainPostsComponent implements OnInit {
   posts : Array<any>;
   constructor(private GetPostsService : GetPostsService) {
     for (let i = 1; i <= 100; i++) {
-      this.collection.push(`item ${i}`);
+      this.collection.push('item ${i}');
     }
-   }
+  }
 
   ngOnInit() {
     this.GetPostsService.getAll().subscribe(posts => {
-      this.posts = posts.json();
+      this.posts = posts;
     });
   }
 

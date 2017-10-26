@@ -16,4 +16,3 @@ export class MainpostPostComponent implements OnInit {
   }
 
 }
-/*asi deberia ser*/

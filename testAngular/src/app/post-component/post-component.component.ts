@@ -17,7 +17,7 @@ constructor(private route : ActivatedRoute, private service : GetPostsService, p
 
   private getPost(id: number) {
       this.service.get(id).subscribe((post) => {
-          this.post = post.json();
+          this.post = post;
       });
   }
 
@@ -28,7 +28,7 @@ constructor(private route : ActivatedRoute, private service : GetPostsService, p
       this.getPost(id);
     })
     this.commService.getPostComments(id).subscribe(comments => {
-      this.comments = comments.json();
+      this.comments = comments;
     });
       
   }

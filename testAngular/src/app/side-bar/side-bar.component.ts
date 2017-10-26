@@ -16,8 +16,8 @@ export class SideBarComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAll().subscribe((comments) => {
-           this.comments = comments.json();
-         });
+      this.comments = comments;
+    });
   }
 
 }

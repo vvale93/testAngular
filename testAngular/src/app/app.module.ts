@@ -27,7 +27,6 @@ import { RegisterComponent } from './register/register.component';
 
 import { UserListService } from './user-list.service';
 import { GetPostsService } from './get-posts.service';
-import { LastpostsService } from './lastposts.service';
 import { CommentsService } from './comments.service';
 
 @NgModule({
@@ -60,7 +59,6 @@ import { CommentsService } from './comments.service';
   providers: [
     UserListService,
     GetPostsService, 
-    LastpostsService,
     CommentsService
   ],
   bootstrap: [AppComponent]
