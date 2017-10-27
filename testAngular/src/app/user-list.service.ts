@@ -16,7 +16,7 @@ export class UserListService {
       });
   }
 
-  get(id: number) {
+  get(id: number) : Observable<User> {
     return this.http.get('https://jsonplaceholder.typicode.com/users/' + id)
       .map(function(data){
         return data.json();

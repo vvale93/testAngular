@@ -16,7 +16,7 @@ export class GetPostsService {
       });
   }
 
-  get(id: number) {
+  get(id: number) : Observable<Post> {
     return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id)
       .map(function(data){
         return data.json();
