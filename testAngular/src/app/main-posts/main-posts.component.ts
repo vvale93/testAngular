@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetPostsService } from '../get-posts.service';
+import { Post } from '../post.interface';
 
 @Component({
   selector: 'app-main-posts',
@@ -9,7 +10,7 @@ import { GetPostsService } from '../get-posts.service';
 export class MainPostsComponent implements OnInit {
 
   collection = [];    
-  posts : Array<any>;
+  posts : Post[];
   constructor(private GetPostsService : GetPostsService) {
     for (let i = 1; i <= 100; i++) {
       this.collection.push('item ${i}');

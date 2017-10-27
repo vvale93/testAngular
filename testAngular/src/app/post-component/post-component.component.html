@@ -11,13 +11,13 @@
                 Post not found
             </div> 
             <div class="commentBox">
-                <h2 *ngIf="comments" class="commentBoxTitle">Comentarios:</h2>
+                <h2 *ngIf="comments.length" class="commentBoxTitle">Comentarios:</h2>
             <div *ngFor="let comment of comments">
                 <p>"{{ comment.body | ucfirst }}"</p>
                 <p>Enviado por: <span class="email">{{ comment.email }}</span></p>
                 <hr/>
             </div>
-                <h2 *ngIf="!comments" class="commentBoxTitle">Aun no hay ningun comentario :(</h2>
+                <h2 *ngIf="!comments.length" class="commentBoxTitle">Aun no hay ningun comentario :(</h2>
         </div>
         </section>
     </div>
