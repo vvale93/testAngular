@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetPostsService } from '../get-posts.service';
 import { CommentsService } from '../comments.service';
+import { Post } from '../post.interface';
+import { Comment } from '../comment.interface'
 
 @Component({
   selector: 'app-post-component',
@@ -10,8 +12,8 @@ import { CommentsService } from '../comments.service';
 })
 export class PostComponentComponent implements OnInit {
 
-  post : any;
-  comments : Array<any>;
+  post : Post;
+  comments : Comment[];
 
 constructor(private route : ActivatedRoute, private service : GetPostsService, private commService : CommentsService) { }
 

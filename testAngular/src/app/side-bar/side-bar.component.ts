@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommentsService } from '../comments.service';
+import { Comment } from '../comment.interface';
+import { Post } from '../post.interface';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,9 +11,9 @@ import { CommentsService } from '../comments.service';
 export class SideBarComponent implements OnInit {
 
   @Input()
-  post : any; 
+  post : Post; 
 
-  comments : Array<any>;
+  comments : Comment[];
   constructor(private service : CommentsService) { }
 
   ngOnInit() {

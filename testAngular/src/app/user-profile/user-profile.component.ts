@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserListService } from '../user-list.service';
+import { User } from '../user.interface';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,7 +10,7 @@ import { UserListService } from '../user-list.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  user : any;
+  user : User;
 
   constructor(private route : ActivatedRoute, private service : UserListService) { }
 
