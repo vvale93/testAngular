@@ -6,15 +6,16 @@
                 <div class="form-row">
                     <div class="form-group col-4">
                         <label for="nombre" class="col-form-label">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tu nombre">
+                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tu nombre" formControlName="name">
+                        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
                     </div>
                     <div class="form-group col-4">
                         <label for="apellido" class="col-form-label">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Tu apellido">
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Tu apellido" formControlName="lastNname">
                     </div>
                     <div class="form-group col-4">
-                        <label for="nickname" class="col-form-label">Apodo</label>
-                        <input type="text" class="form-control" name="nickname" id="nickname" placeholder="Tu apodo">
+                        <label for="nickname" class="col-form-label">Nombre de usuario</label>
+                        <input type="text" class="form-control" name="nickname" id="nickname" placeholder="Tu nombre para este sitio" formControlName="nickName">
                     </div>
                 </div>
                 <p>Genero</p>
@@ -36,21 +37,21 @@
                 <div class="form-row">
                     <div class="form-group col-6">
                         <label for="mail" class="col-form-label">Correo Electronico</label>
-                        <input type="text" id="mail" name="email" class="form-control" placeholder="Tu correo electronico">
+                        <input type="text" id="mail" name="email" class="form-control" placeholder="Tu correo electronico" formControlName="email">
                     </div>
                     <div class="form-group col-6">
                         <label for="telefono" class="col-form-label">Telefono</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Tu telefono">
+                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Tu telefono" formControlName="telephone">
                     </div>                    
                 </div>
                 <div class="form-row">
                     <div class="form-group col-6">
                         <label for="password" class="col-form-label">Contraseña</label>
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Tu contraseña">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Tu contraseña" formControlName="pass">
                     </div>
                     <div class="form-group col-6">
                         <label for="password" class="col-form-label">Reingrese su Contraseña</label>
-                        <input type="password" id="passRepeat" name="passRepeat" class="form-control" placeholder="Tu contraseña">
+                        <input type="password" id="passRepeat" name="passRepeat" class="form-control" placeholder="Tu contraseña" formControlName="passRepeat">
                     </div>                    
                 </div>
                 <div class="form-check">
@@ -59,11 +60,8 @@
                         Acepta los terminos y condiciones? 
                     </label>
                 </div>
-                <input type="submit" value="Enviar :)" id="submit" class="btn btn-primary">
+                <input type="submit" value="Listo!" [disabled]="!rForm.valid" id="submit" class="btn btn-primary">
             </form>
         </div>
     </div>    
 </div>
-
-
-
