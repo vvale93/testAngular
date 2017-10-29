@@ -19,7 +19,7 @@ constructor(private route : ActivatedRoute, private service : GetPostsService, p
 
   private getPost(id: number) {
       this.service.get(id).subscribe((post) => {
-          this.post = post;
+        this.post = post;
       });
   }
 

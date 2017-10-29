@@ -2,66 +2,106 @@
     <div class="row contenedor"><app-side-bar class="col-3 navbar-fixed-left" ></app-side-bar>
         <div class="container col-8">
             <h1 class="titulo">Registrate!</h1>
-            <form class="contenido" onsubmit="onSubmit(); return false;">
+            <form class="contenido" [formGroup]="form">
                 <div class="form-row">
                     <div class="form-group col-4">
                         <label for="nombre" class="col-form-label">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tu nombre" formControlName="name">
-                        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+                        <input type="text" id="nombre" class="form-control" formControlName="nombre" placeholder="Tu nombre" >
+                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.required && form.get('nombre').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.pattern">Solo puede ingresar letras</span>                                             
+                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.minlength && form.get('nombre').touched">Este campo requiere al menos tres caracteres.</span>                        
                     </div>
                     <div class="form-group col-4">
                         <label for="apellido" class="col-form-label">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Tu apellido" formControlName="lastNname">
+                        <input type="text" class="form-control" formControlName="apellido" id="apellido" placeholder="Tu apellido" >
+                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.required && form.get('apellido').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.pattern">Solo puede ingresar letras</span>
+                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.minlength && form.get('apellido').touched">Este campo requiere al menos tres caracteres.</span>
                     </div>
                     <div class="form-group col-4">
                         <label for="nickname" class="col-form-label">Nombre de usuario</label>
-                        <input type="text" class="form-control" name="nickname" id="nickname" placeholder="Tu nombre para este sitio" formControlName="nickName">
+                        <input type="text" class="form-control" formControlName="nickName"  id="nickName" placeholder="Tu nombre para este sitio" >
+                        <span class="form-text form-validation" *ngIf="form.get('nickName').errors?.required && form.get('nickName').touched">Este campo es requerido</span>                        
+                        <span class="form-text form-validation" *ngIf="form.get('nickName').errors?.minlength && form.get('nickName').touched">Este campo requiere al menos tres caracteres.</span>
                     </div>
                 </div>
                 <p>Genero</p>
                 <label class="custom-control custom-radio">
-                    <input id="radio1" name="genero[]" type="radio" class="custom-control-input">
+                    <input id="radio1" name="genero" value="femenino" formControlName="genero" type="radio" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
                     <span class="custom-control-description">Femenino</span>
                 </label>
                 <label class="custom-control custom-radio">
-                    <input id="radio2" name="genero[]" type="radio" class="custom-control-input">
+                    <input id="radio2" name="genero" value="masculino" formControlName="genero" type="radio" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
                     <span class="custom-control-description">Masculino</span>
                 </label>
                 <label class="custom-control custom-radio">
-                    <input id="radio3" name="genero[]" type="radio" class="custom-control-input">
+                    <input id="radio3" name="genero" value="otro" formControlName="genero" type="radio" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
                     <span class="custom-control-description">Otro</span>
                 </label>
                 <div class="form-row">
                     <div class="form-group col-6">
-                        <label for="mail" class="col-form-label">Correo Electronico</label>
-                        <input type="text" id="mail" name="email" class="form-control" placeholder="Tu correo electronico" formControlName="email">
+                        <label for="email" class="col-form-label">Correo Electronico</label>
+                        <input type="text" id="mail" class="form-control" formControlName="email" placeholder="Tu correo electronico">
+                        <span class="form-text form-validation" *ngIf="form.get('email').errors?.required && form.get('email').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('email').errors?.pattern  && form.get('email').touched">Ingrese una direccion de correo valida</span>
                     </div>
                     <div class="form-group col-6">
                         <label for="telefono" class="col-form-label">Telefono</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Tu telefono" formControlName="telephone">
+                        <input type="text" id="telefono" class="form-control" formControlName="telefono" placeholder="Tu telefono" >
+                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.required && form.get('telefono').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.pattern">Solo puede ingresar numeros</span>
+                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.minlength && form.get('telefono').touched">Debe ingresar un numero de al menos 6 digitos</span>
                     </div>                    
                 </div>
                 <div class="form-row">
                     <div class="form-group col-6">
                         <label for="password" class="col-form-label">Contraseña</label>
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Tu contraseña" formControlName="pass">
+                        <input type="password" id="password" class="form-control" formControlName="password" placeholder="Tu contraseña" >
+                        <span class="form-text form-validation" *ngIf="form.get('password').errors?.required && form.get('password').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('password').errors?.minlength && form.get('password').touched">La contraseña debe tener al menos 6 digitos</span>
                     </div>
                     <div class="form-group col-6">
-                        <label for="password" class="col-form-label">Reingrese su Contraseña</label>
-                        <input type="password" id="passRepeat" name="passRepeat" class="form-control" placeholder="Tu contraseña" formControlName="passRepeat">
+                        <label for="confirmPass" class="col-form-label">Reingrese su Contraseña</label>
+                        <input type="password" id="confirmPass" class="form-control" formControlName="confirmPass" placeholder="Tu contraseña">
+                        <span class="form-text form-validation" *ngIf="form.get('confirmPass').errors?.required && form.get('confirmPass').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('confirmPass').errors?.MatchPassword && form.get('confirmPass').touched">Password not match</span>
                     </div>                    
                 </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Acepta los terminos y condiciones? 
-                    </label>
-                </div>
-                <input type="submit" value="Listo!" [disabled]="!rForm.valid" id="submit" class="btn btn-primary">
+                    <div class="form-group form-row">
+                        <div class="col-6">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" (click)="d.toggle()" type="button" >
+                                    <img src="/assets/calendar.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                </button>
+                            </span>
+                            <input id="fechaNacimiento" placeholder="yyyy-mm-dd" class="form-control" formControlName="fechaNacimiento" aria-describedby="basic-addon1" ngbDatepicker #d="ngbDatepicker">
+                            </div>
+                            <span class="form-text form-validation" *ngIf="form.get('fechaNacimiento').errors?.required && form.get('fechaNacimiento').touched">Seleccione su fecha de nacimiento</span>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="pais">Pais</label>
+                            <select id="pais" class="form-control" formControlName="pais">
+                                <option value="argentina">Argentina</option>
+                                <option value="resto-del-mundo">Resto del Mundo</option>
+                            </select>
+                            <span class="form-text form-validation" *ngIf="form.get('pais').errors?.required && form.get('pais').touched">Seleccione un pais de la lista</span>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" formControlName="acepto">
+                            Acepta los terminos y condiciones? 
+                        </label>
+                        <span class="form-text form-validation" *ngIf="form.get('acepto').errors?.required && form.get('acepto').touched">Debe aceptar los terminos y condiciones para continuar con el registro</span>
+                    </div>
+                <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+                <button class="btn btn-danger" type="reset" [disabled]="form.pristine">Cancelar</button>
             </form>
         </div>
-    </div>    
+    </div>
 </div>

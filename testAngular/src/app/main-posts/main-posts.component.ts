@@ -11,6 +11,7 @@ export class MainPostsComponent implements OnInit {
 
   collection = [];    
   posts : Post[];
+  
   constructor(private GetPostsService : GetPostsService) {
     for (let i = 1; i <= 100; i++) {
       this.collection.push('item ${i}');

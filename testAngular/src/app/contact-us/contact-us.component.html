@@ -3,51 +3,49 @@
         <div class="container col">
             <h1 class="titulo">Formulario de contacto</h1>
             <h4>Tenes alguna duda, consulta, o sugerencia?</h4>
-            <form class="contenido" onsubmit="onSubmit(); return false;">
+            <form class="contenido" [formGroup]="form">
                 <div class="form-row">
                     <div class="form-group col-6">
                         <label for="nombre" class="col-form-label">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tu nombre">
+                        <input type="text" id="nombre" class="form-control" formControlName="nombre" placeholder="Tu nombre" >
+                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.required && form.get('nombre').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.pattern">Solo puede ingresar letras</span>                                             
+                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.minlength && form.get('nombre').touched">Este campo requiere al menos tres caracteres.</span>
                     </div>
                     <div class="form-group col-6">
                         <label for="apellido" class="col-form-label">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Tu apellido">
+                        <input type="text" class="form-control" formControlName="apellido" id="apellido" placeholder="Tu apellido" >
+                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.required && form.get('apellido').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.pattern">Solo puede ingresar letras</span>
+                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.minlength && form.get('apellido').touched">Este campo requiere al menos tres caracteres.</span>
                     </div>
                 </div>
-                <p>Genero</p>
-                <label class="custom-control custom-radio">
-                    <input id="radio1" name="genero[]" type="radio" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Femenino</span>
-                </label>
-                <label class="custom-control custom-radio">
-                    <input id="radio2" name="genero[]" type="radio" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Masculino</span>
-                </label>
-                <label class="custom-control custom-radio">
-                    <input id="radio3" name="genero[]" type="radio" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Otro</span>
-                </label>
                 <div class="form-row">
                     <div class="form-group col-6">
-                        <label for="mail" class="col-form-label">Correo Electronico</label>
-                        <input type="text" id="mail" name="email" class="form-control" placeholder="Tu correo electronico">
+                        <label for="email" class="col-form-label">Correo Electronico</label>
+                        <input type="text" id="email" class="form-control" formControlName="email" placeholder="Tu correo electronico">
+                        <span class="form-text form-validation" *ngIf="form.get('email').errors?.required && form.get('email').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('email').errors?.pattern  && form.get('email').touched">Ingrese una direccion de correo valida</span>
                     </div>
                     <div class="form-group col-6">
-                        <label for="tlf" class="col-form-label">Telefono</label>
-                        <input type="password" name="tlf" class="form-control" id="tlf" placeholder="Tu telefono">
+                        <label for="telefono" class="col-form-label">Telefono</label>
+                        <input type="text" id="telefono" class="form-control" formControlName="telefono" placeholder="Tu telefono" >
+                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.required && form.get('telefono').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.pattern">Solo puede ingresar numeros</span>
+                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.minlength && form.get('telefono').touched">Debe ingresar un numero de al menos 6 digitos</span>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="comentarios">Cual es el motivo de tu consulta?</label>
-                        <textarea class="form-control" name="comentario" id="comentarios" rows="3"></textarea>
+                        <textarea class="form-control" name="comentarios" formControlName="comentarios" id="comentarios" placeholder="..." rows="3"></textarea>
+                        <span class="form-text form-validation" *ngIf="form.get('comentarios').errors?.required && form.get('comentarios').touched">Ingrese su comentario</span>
+                        <span class="form-text form-validation" *ngIf="form.get('comentarios').errors?.minlength && form.get('comentarios').touched">Escriba al menos 15 caracteres</span>
                     </div>
                 </div>
-                <input type="submit" value="Enviar :)" id="submit" class="btn btn-primary">
+                <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+                <button class="btn btn-danger" type="reset" [disabled]="form.pristine">Cancelar</button>
             </form>
         </div>
-    </div>    
+    </div>   
 </div>

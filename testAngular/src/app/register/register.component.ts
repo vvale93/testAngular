@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { PasswordValidation } from './passMatcher';
 
 @Component({
   selector: 'app-register',
@@ -8,30 +9,50 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  rForm : FormGroup;
-  'name' : string = null;
-  'lastName' : string = null;
-  'nickName' : string = null;
-  /*genero?*/
-  'email' : string = null;
-  'telephone' : number = null;
-  'pass' : string = null;
-  'passRepeat' : string = null;
-  /*TyC? */
-  titleAlert:string = 'This field is required';
-  constructor(private fb: FormBuilder) { 
-    this.rForm = fb.group({
-      'name' : [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(30)])],
-      'lastName' : [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(30)])],
-      'nickName' : [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(30)])],
-      /*genero*/
-      'email' : [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(50)])],
-      'telephone' : '',
-      'pass' : [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(15)])],
-      'passRepeat' : [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(15)])],
-    });
+  form: FormGroup;
+  
+  constructor(private fb: FormBuilder) { /*!*/
+    this.createForm();
   }
-
+  
+  private createForm() {
+        this.form = this.fb.group({
+          nombre: [null, [
+            Validators.required,
+            Validators.pattern('[a-zA-Z ]*'),
+            Validators.minLength(3)
+          ]],
+          apellido: [null, [
+            Validators.required,
+            Validators.pattern('[a-zA-Z ]*'),
+            Validators.minLength(3)
+          ]],
+          email: [null, [
+            Validators.required,
+            Validators.pattern (/[a-z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)
+          ]],
+          nickName: [null, [
+            Validators.required,
+            Validators.minLength(3)
+          ]],
+          telefono: [null, [
+            Validators.required,
+            Validators.pattern('[0-9]*'),
+            Validators.minLength(6)
+          ]],
+          password: [null, [
+            Validators.required,
+            Validators.minLength(6)
+          ]],
+          confirmPass: [null, Validators.required],
+          fechaNacimiento: [null, Validators.required],
+          genero: [null, Validators.required],
+          pais: [null, Validators.required],
+          acepto: [false, Validators.requiredTrue]
+        }, {
+          validator: PasswordValidation.MatchPassword          
+        });
+      }
   ngOnInit() {
     
   }
