@@ -11,12 +11,17 @@ import { User } from '../user.interface';
 export class UserProfileComponent implements OnInit {
 
   user : User;
+  isLoading: Boolean = true;
 
   constructor(private route : ActivatedRoute, private service : UserListService) { }
 
   private getUserP(id: number) {
     this.service.get(id).subscribe((user) => {
       this.user = user;
+    }, (error) => {
+        console.error(error);
+      }, () => {
+          this.isLoading = false;
     });
   }
 

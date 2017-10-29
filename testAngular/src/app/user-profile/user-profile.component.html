@@ -14,8 +14,9 @@
         </div>
       </article>
     </section>
-    <section class="col-8" *ngIf="!user">
+    <section class="col-8" *ngIf="!user && !isLoading">
       User not found.
     </section>
+    <app-loading *ngIf="isLoading"></app-loading>
   </div>
 </div>

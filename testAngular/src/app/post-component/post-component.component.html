@@ -7,9 +7,10 @@
                 <p class="postBody">{{ post.body }} </p>
                 <a [routerLink]="['/user', post.userId]">Autor</a>
             </div>
-            <div *ngIf="!post">
+            <div *ngIf="!post && !isLoading">
                 Post not found
             </div> 
+            <app-loading *ngIf="isLoading"></app-loading>
             <div class="commentBox">
                 <h2 *ngIf="comments.length" class="commentBoxTitle">Comentarios:</h2>
             <div *ngFor="let comment of comments">
@@ -17,7 +18,8 @@
                 <p>Enviado por: <span class="email">{{ comment.email }}</span></p>
                 <hr/>
             </div>
-            <h2 *ngIf="!comments.length" class="commentBoxTitle">Aun no hay ningun comentario :(</h2>
+            <app-loading *ngIf="isLoading"></app-loading>
+            <h2 *ngIf="!comments.length && !isLoading" class="commentBoxTitle">Aun no hay ningun comentario :(</h2>
         </div>
         </section>
     </div>

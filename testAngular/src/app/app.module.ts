@@ -28,6 +28,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserListService } from './user-list.service';
 import { GetPostsService } from './get-posts.service';
 import { CommentsService } from './comments.service';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CommentsService } from './comments.service';
     PostComponentComponent,
     UserProfileComponent,
     MainpostPostComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

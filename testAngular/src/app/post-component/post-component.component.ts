@@ -14,6 +14,7 @@ export class PostComponentComponent implements OnInit {
 
   post : Post;
   comments : Comment[];
+  isLoading: Boolean = true;
 
 constructor(private route : ActivatedRoute, private service : GetPostsService, private commService : CommentsService) { }
 
@@ -31,6 +32,10 @@ constructor(private route : ActivatedRoute, private service : GetPostsService, p
     })
     this.commService.getPostComments(id).subscribe(comments => {
       this.comments = comments;
+    }, (error) => {
+      console.error(error);
+      }, () => {
+        this.isLoading = false;           
     });
       
   }
