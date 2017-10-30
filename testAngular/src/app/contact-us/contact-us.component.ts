@@ -14,23 +14,24 @@ export class ContactUsComponent implements OnInit {
   constructor(private fb: FormBuilder) { 
     this.createForm();
   }
+
   private createForm() {
     this.form = this.fb.group({
-      nombre: [null, [
+      nombreContacto: [null, [
         Validators.required,
         Validators.pattern('[a-zA-Z ]*'),
         Validators.minLength(3)
       ]],
-      apellido: [null, [
+      apellidoContacto: [null, [
         Validators.required,
         Validators.pattern('[a-zA-Z ]*'),
         Validators.minLength(3)
       ]],
-      email: [null, [
+      emailContacto: [null, [
         Validators.required,
         Validators.pattern (/[a-z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)
       ]],      
-      telefono: [null, [
+      telefonoContacto: [null, [
         Validators.required,
         Validators.pattern('[0-9]*'),
         Validators.minLength(6)
@@ -41,6 +42,7 @@ export class ContactUsComponent implements OnInit {
       ]],     
     });
   }
+  
   ngOnInit() {
   }
 

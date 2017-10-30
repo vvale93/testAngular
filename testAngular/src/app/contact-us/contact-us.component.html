@@ -6,33 +6,33 @@
             <form class="contenido" [formGroup]="form">
                 <div class="form-row">
                     <div class="form-group col-6">
-                        <label for="nombre" class="col-form-label">Nombre</label>
-                        <input type="text" id="nombre" class="form-control" formControlName="nombre" placeholder="Tu nombre" >
-                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.required && form.get('nombre').touched">Este campo es requerido</span>
-                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.pattern">Solo puede ingresar letras</span>                                             
-                        <span class="form-text form-validation" *ngIf="form.get('nombre').errors?.minlength && form.get('nombre').touched">Este campo requiere al menos tres caracteres.</span>
+                        <label for="nombreContacto" class="col-form-label">Nombre</label>
+                        <input type="text" id="nombreContacto" class="form-control" formControlName="nombreContacto" placeholder="Tu nombre" >
+                        <span class="form-text form-validation" *ngIf="form.get('nombreContacto').errors?.required && form.get('nombreContacto').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('nombreContacto').errors?.pattern">Solo puede ingresar letras</span>                                             
+                        <span class="form-text form-validation" *ngIf="form.get('nombreContacto').errors?.minlength && form.get('nombreContacto').touched">Este campo requiere al menos tres caracteres.</span>
                     </div>
                     <div class="form-group col-6">
-                        <label for="apellido" class="col-form-label">Apellido</label>
-                        <input type="text" class="form-control" formControlName="apellido" id="apellido" placeholder="Tu apellido" >
-                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.required && form.get('apellido').touched">Este campo es requerido</span>
-                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.pattern">Solo puede ingresar letras</span>
-                        <span class="form-text form-validation" *ngIf="form.get('apellido').errors?.minlength && form.get('apellido').touched">Este campo requiere al menos tres caracteres.</span>
+                        <label for="apellidoContacto" class="col-form-label">Apellido</label>
+                        <input type="text" class="form-control" formControlName="apellidoContacto" id="apellidoContacto" placeholder="Tu apellido" >
+                        <span class="form-text form-validation" *ngIf="form.get('apellidoContacto').errors?.required && form.get('apellidoContacto').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('apellidoContacto').errors?.pattern">Solo puede ingresar letras</span>
+                        <span class="form-text form-validation" *ngIf="form.get('apellidoContacto').errors?.minlength && form.get('apellidoContacto').touched">Este campo requiere al menos tres caracteres.</span>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-6">
-                        <label for="email" class="col-form-label">Correo Electronico</label>
-                        <input type="text" id="email" class="form-control" formControlName="email" placeholder="Tu correo electronico">
-                        <span class="form-text form-validation" *ngIf="form.get('email').errors?.required && form.get('email').touched">Este campo es requerido</span>
-                        <span class="form-text form-validation" *ngIf="form.get('email').errors?.pattern  && form.get('email').touched">Ingrese una direccion de correo valida</span>
+                        <label for="emailContacto" class="col-form-label">Correo Electronico</label>
+                        <input type="text" id="emailContacto" class="form-control" formControlName="emailContacto" placeholder="Tu correo electronico">
+                        <span class="form-text form-validation" *ngIf="form.get('emailContacto').errors?.required && form.get('emailContacto').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('emailContacto').errors?.pattern  && form.get('emailContacto').touched">Ingrese una direccion de correo valida</span>
                     </div>
                     <div class="form-group col-6">
-                        <label for="telefono" class="col-form-label">Telefono</label>
-                        <input type="text" id="telefono" class="form-control" formControlName="telefono" placeholder="Tu telefono" >
-                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.required && form.get('telefono').touched">Este campo es requerido</span>
-                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.pattern">Solo puede ingresar numeros</span>
-                        <span class="form-text form-validation" *ngIf="form.get('telefono').errors?.minlength && form.get('telefono').touched">Debe ingresar un numero de al menos 6 digitos</span>
+                        <label for="telefonoContacto" class="col-form-label">Telefono</label>
+                        <input type="text" id="telefonoContacto" class="form-control" formControlName="telefonoContacto" placeholder="Tu telefono" >
+                        <span class="form-text form-validation" *ngIf="form.get('telefonoContacto').errors?.required && form.get('telefonoContacto').touched">Este campo es requerido</span>
+                        <span class="form-text form-validation" *ngIf="form.get('telefonoContacto').errors?.pattern">Solo puede ingresar numeros</span>
+                        <span class="form-text form-validation" *ngIf="form.get('telefonoContacto').errors?.minlength && form.get('telefonoContacto').touched">Debe ingresar un numero de al menos 6 digitos</span>
                     </div>
                 </div>
                 <div class="form-row">

@@ -81,7 +81,7 @@
                             </span>
                             <input id="fechaNacimiento" placeholder="yyyy-mm-dd" class="form-control" formControlName="fechaNacimiento" aria-describedby="basic-addon1" ngbDatepicker #d="ngbDatepicker">
                             </div>
-                            <span class="form-text form-validation" *ngIf="form.get('fechaNacimiento').errors?.required && form.get('fechaNacimiento').touched">Seleccione su fecha de nacimiento</span>
+                            <span class="form-text form-validation" *ngIf="form.get('fechaNacimiento').errors && form.get('fechaNacimiento').touched">Seleccione una fecha valida</span>
                         </div>
                         <div class="form-group col-6">
                             <label for="pais">Pais</label>

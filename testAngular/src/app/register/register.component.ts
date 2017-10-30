@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
 
   form: FormGroup;
   
-  constructor(private fb: FormBuilder) { /*!*/
+  constructor(private fb: FormBuilder) { 
     this.createForm();
   }
   
@@ -53,6 +53,7 @@ export class RegisterComponent implements OnInit {
           validator: PasswordValidation.MatchPassword          
         });
       }
+
   ngOnInit() {
     
   }
