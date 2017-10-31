@@ -1,5 +1,5 @@
 <div class="container-fluid main-posts-container">
-  <h1 class="titulo">Posts</h1>
+  <h1 class="titulo">Ultimos posts</h1>
   <section>
     <article *ngFor="let post of posts | reverse | paginate: { itemsPerPage: 10, currentPage: p }">
       <app-mainpost-post [post]="post"></app-mainpost-post>

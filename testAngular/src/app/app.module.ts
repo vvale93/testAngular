@@ -24,11 +24,14 @@ import { PostComponentComponent } from './post-component/post-component.componen
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MainpostPostComponent } from './mainpost-post/mainpost-post.component';
 import { RegisterComponent } from './register/register.component';
+import { LoadingComponent } from './loading/loading.component';
+import { LoginComponent } from './login/login.component';
 
 import { UserListService } from './user-list.service';
 import { GetPostsService } from './get-posts.service';
 import { CommentsService } from './comments.service';
-import { LoadingComponent } from './loading/loading.component';
+import { PersonService } from './person.service';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { LoadingComponent } from './loading/loading.component';
     UserProfileComponent,
     MainpostPostComponent,
     RegisterComponent,
-    LoadingComponent
+    LoadingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import { LoadingComponent } from './loading/loading.component';
   providers: [
     UserListService,
     GetPostsService, 
-    CommentsService
+    CommentsService,
+    PersonService
   ],
   bootstrap: [AppComponent]
 })

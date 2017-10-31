@@ -9,16 +9,19 @@
                 <a class="nav-link" routerLink="">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/posts">Posts</a>
+                <a class="nav-link" [routerLink]="['/posts']">Posts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/userList">Usuarios</a>
+                <a class="nav-link" [routerLink]="['/userList']">Usuarios</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/aboutUs">Nosotros</a>
+                <a class="nav-link" [routerLink]="['/aboutUs']">Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/registro">Registrate!</a>
+                <a class="nav-link" [routerLink]="['/login']">Login</a>
+            </li>            
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/registro']">Registrate!</a>
             </li>
         </ul>
     </div>

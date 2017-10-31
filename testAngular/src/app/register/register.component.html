@@ -2,7 +2,7 @@
     <div class="row contenedor"><app-side-bar class="col-3 navbar-fixed-left" ></app-side-bar>
         <div class="container col-8">
             <h1 class="titulo">Registrate!</h1>
-            <form class="contenido" [formGroup]="form">
+            <form class="contenido" [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="form-row">
                     <div class="form-group col-4">
                         <label for="nombre" class="col-form-label">Nombre</label>
@@ -79,7 +79,7 @@
                                     <img src="/assets/calendar.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
                                 </button>
                             </span>
-                            <input id="fechaNacimiento" placeholder="yyyy-mm-dd" class="form-control" formControlName="fechaNacimiento" aria-describedby="basic-addon1" ngbDatepicker #d="ngbDatepicker">
+                            <input id="fechaNacimiento" placeholder="yyyy-mm-dd" [minDate]="minDate" class="form-control" formControlName="fechaNacimiento" aria-describedby="basic-addon1" ngbDatepicker #d="ngbDatepicker">
                             </div>
                             <span class="form-text form-validation" *ngIf="form.get('fechaNacimiento').errors && form.get('fechaNacimiento').touched">Seleccione una fecha valida</span>
                         </div>

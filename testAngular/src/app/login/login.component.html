@@ -1,0 +1,23 @@
+<div class='login container-fluid'>
+  <div class="row">
+    <app-side-bar class="col-3 navbar-fixed-left" ></app-side-bar>
+      <article class="col-8">
+        <h1 class="titulo">Ingresa!</h1>
+        <form class="login" #personForm="ngForm" (ngSubmit)="checkUser()" novalidate>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="nickLog" class="col-form-label">Nombre de usuario</label>
+              <input type="text" class="form-control"  name="nickLog" id="nickLog" placeholder="Tu nombre de usuario" [(ngModel)]="persona.nickName" required #inputNickLog="ngModel" >
+              <span class="form-text form-validation error" *ngIf="inputNickLog.errors?.required && inputNickLog.touched">Este campo es requerido</span>
+            </div>
+            <div class="form-group col-6">
+              <label for="passLog" class="col-form-label">Contraseña</label>
+              <input type="password" id="passLog" name="passLog" class="form-control"  placeholder="Tu contraseña" [(ngModel)]="persona.password" required #inputPassLog="ngModel" >
+              <span class="form-text form-validation error" *ngIf="inputPassLog.errors?.required && inputPassLog.touched">Este campo es requerido</span>
+            </div>
+            <button type="submit" class="btn btn-primary form-group col-12" [disabled]="!personForm.valid">Listo!</button>
+          </div>
+        </form>
+      </article>
+  </div>
+</div>

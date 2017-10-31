@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { PasswordValidation } from './passMatcher';
+import { PersonService } from '../person.service';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +11,9 @@ import { PasswordValidation } from './passMatcher';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
-  
-  constructor(private fb: FormBuilder) { 
+  minDate = {year: 1900, month: 1, day: 1}; 
+
+  constructor(private fb: FormBuilder, private personService: PersonService) { 
     this.createForm();
   }
   
@@ -53,6 +55,10 @@ export class RegisterComponent implements OnInit {
           validator: PasswordValidation.MatchPassword          
         });
       }
+
+  onSubmit() {
+  this.personService.savePerson(this.form.value);
+  }
 
   ngOnInit() {
     

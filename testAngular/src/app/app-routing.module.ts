@@ -10,6 +10,8 @@ import { AllPostsComponent } from '../app/all-posts/all-posts.component'
 import { PostComponentComponent } from '../app/post-component/post-component.component'
 import { UserProfileComponent } from '../app/user-profile/user-profile.component'
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+
 
 const routes: Routes = [
   { path: '', component: BlogBodyComponent },
@@ -20,11 +22,14 @@ const routes: Routes = [
   { path: 'post/:id', component: PostComponentComponent },
   { path: 'user/:id', component: UserProfileComponent },
   { path: 'registro', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
   { path: '**', component: BlogBodyComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true
+  })],
   exports: [RouterModule]
 })
 
